@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M.S. Ahirauli — Official</title>
+
+  <!-- Tailwind for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- GSAP (advanced animations) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-md fixed w-full z-40">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <img src="/static/images/logo.png" alt="logo" class="h-10 w-10 rounded-full object-cover" />
+          <div>
+            <div class="font-semibold">M.S. Ahirauli</div>
+            <div class="text-xs text-gray-500">Ahirauli, Buxar, Bihar, India 802101</div>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#" class="mr-4">Home</a>
+          <a href="#about" class="mr-4">About</a>
+          <a href="#routine" class="mr-4">Daily Routine</a>
+          <a href="#teachers" class="mr-4">Teachers</a>
+          <a href="#management" class="mr-4">Management</a>
+          <a href="#location" class="mr-4">Locate Us</a>
+          <a href="#contact" class="btn btn-primary">Contact</a>
+        </div>
+
+        <div class="md:hidden">
+          <button id="mobile-toggle" class="px-3 py-2 rounded bg-gray-100">Menu</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+    <!-- HERO (YouTube embed used for free hosting / bandwidth savings) -->
+    <section class="relative h-screen overflow-hidden">
+      <div class="absolute inset-0 w-full h-full">
+        <!-- Replace VIDEO_ID with your YouTube video ID (unlisted recommended). -->
+        <iframe
+          class="w-full h-full object-cover"
+          src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&controls=0&loop=1&playlist=VIDEO_ID"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 py-40 text-white">
+        <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg" data-aos="fade-up">Welcome to M.S. Ahirauli</h1>
+        <p class="mt-4 text-xl" data-aos="fade-up" data-aos-delay="150">A proud Government of Bihar school in Ahirauli — where learning meets community.</p>
+
+        <div class="mt-8 flex gap-6">
+          <div class="bg-white/10 p-6 rounded-xl shadow-lg" data-aos="zoom-in" id="card-students">
+            <div class="text-3xl font-bold" id="students-count">0</div>
+            <div class="text-sm">Students</div>
+          </div>
+
+          <div class="bg-white/10 p-6 rounded-xl shadow-lg" data-aos="zoom-in" data-aos-delay="100" id="card-teachers">
+            <div class="text-3xl font-bold" id="teachers-count">0</div>
+            <div class="text-sm">Teachers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">About the School</h2>
+      <p class="mt-4">M.S. Ahirauli is a Government school serving the Ahirauli community in Buxar. We provide quality education for all students in the locality.</p>
+    </section>
+
+    <!-- Daily Routine -->
+    <section id="routine" class="bg-white py-12" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">Daily Routine</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-4" id="routine-list">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Teachers -->
+    <section id="teachers" class="py-12 max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Our Teachers</h2>
+      <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6" id="teachers-list">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+    <!-- Management -->
+    <section id="management" class="py-12 bg-gray-50" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">School Management</h2>
+        <div class="mt-4 grid md:grid-cols-2 gap-4" id="management-list"></div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="py-12 max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Locate Us</h2>
+      <p class="text-sm mt-2">Find M.S. Ahirauli on the map and get directions.</p>
+      <div class="mt-4 grid md:grid-cols-2 gap-6">
+        <div>
+          <!-- OpenStreetMap embed (no API key). Adjust lat/lon if needed. -->
+          <iframe width="100%" height="400" frameborder="0" style="border:0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=84.0%2C25.5%2C84.5%2C25.9&layer=mapnik&marker=25.7%2C84.25"></iframe>
+          <br />
+          <small><a href="https://www.openstreetmap.org/?mlat=25.7&mlon=84.25#map=15/25.7000/84.2500">View Larger Map</a></small>
+        </div>
+
+        <div>
+          <form id="locate-form" class="bg-white p-6 rounded-lg shadow" onsubmit="event.preventDefault(); handleGetDirections();">
+            <label class="block text-sm">Your Location (city)</label>
+            <input id="visitor-city" class="w-full mt-2 p-2 border rounded" placeholder="Enter your city" />
+            <button id="get-directions" class="mt-4 px-4 py-2 rounded bg-blue-600 text-white">Get Directions</button>
+            <p id="directions-note" class="text-sm mt-3 text-gray-600"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12 max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold">Contact Us</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Formspree contact form (replace with your Formspree ID or embed Google Form) -->
+        <form id="contact-form" class="bg-white p-6 rounded-lg shadow" method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID">
+          <label class="block text-sm">Name</label>
+          <input name="name" class="w-full mt-2 p-2 border rounded" required />
+          <label class="block text-sm mt-3">Email</label>
+          <input name="email" type="email" class="w-full mt-2 p-2 border rounded" required />
+          <label class="block text-sm mt-3">Message</label>
+          <textarea name="message" class="w-full mt-2 p-2 border rounded" rows="4" required></textarea>
+          <button type="submit" class="mt-4 px-4 py-2 rounded bg-green-600 text-white">Send</button>
+        </form>
+
+        <div class="p-6 rounded-lg bg-white shadow">
+          <h3 class="font-semibold">School Info</h3>
+          <p class="text-sm mt-2">Ahirauli, Buxar, Bihar, India 802101</p>
+          <p class="text-sm mt-2">Phone: +91-XXXXXXXXXX</p>
+          <p class="text-sm mt-2">Email: info@ms-ahirauli.edu.in</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white mt-12 py-6 shadow-inner">
+    <div class="max-w-6xl mx-auto text-center text-sm text-gray-500">© M.S. Ahirauli — Government of Bihar</div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="main.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

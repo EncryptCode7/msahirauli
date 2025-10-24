@@ -1,0 +1,3 @@
+/* static/css/style.css */
+body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+.btn-primary{ background: linear-gradient(90deg,#0ea5e9,#6366f1); padding: 8px 12px; border-radius: 8px; color: white }
