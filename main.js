@@ -6,20 +6,35 @@
 // Alternatively you can generate this file from a script before redeploying.
 const DATA = {
   daily_routine: [
-    { time: '09:00 AM', activity: 'Assembly' },
-    { time: '09:15 AM', activity: 'First Period' },
-    { time: '10:00 AM', activity: 'Second Period' },
-    { time: '01:00 PM', activity: 'Lunch Break' },
-    { time: '02:00 PM', activity: 'Afternoon Classes' }
+    { time: '06:30 AM', activity: 'Assembly' },
+    { time: '07:00 AM', activity: 'First Period' },
+    { time: '07:30 AM', activity: 'Second Period' },
+    { time: '08:00 PM', activity: 'Lunch Break' },
+    { time: '08:30 PM', activity: 'Afternoon Classes' }
   ],
   teachers: [
-    { name: 'Anita Sharma', subject: 'Mathematics' },
-    { name: 'Sunita Verma', subject: 'Science' },
-    { name: 'Ramesh Yadav', subject: 'Social Studies' }
+    { name: 'Suman Chaubey', subject: 'TGT Social Science' },
+    { name: 'Farhan Maseeh', subject: 'TGT Urdu' },
+    { name: 'Munni Devi', subject: 'TGT Social Sciene' },
+	{ name: 'Kanchan Pandey', subject: 'TGT Hindi' },
+    { name: 'Suhail Afsar', subject: 'TRE 1 Basic Urdu' },
+    { name: 'Dinesh Kumar Singh', subject: 'Basic Grade General' },
+	{ name: 'Akhauri Shalini', subject: 'Baisc Grade General' },
+    { name: 'Rupam Kumari', subject: 'Basic Grade General' },
+    { name: 'Vimala Kumari', subject: 'Basic Grade General' },
+	{ name: 'Sunita Kumari', subject: 'Basic Grade General' },
+    { name: 'Swati Kumari', subject: 'Basic Grade General' },
+    { name: 'Vindhyavashni Dutt', subject: 'Basic Grade General' },
+	{ name: 'Md. Vazeer Kureishi', subject: 'Basic Grade Urdu' },
+    { name: 'Mujibur Rahman', subject: 'Basic Grade General' },
+    { name: 'Chanda Kumari', subject: 'Basic Grade General' },
+	{ name: 'Seema Kumari', subject: 'Basic Grade General' },
+    { name: 'Shahina Khatoon', subject: 'Basic Grade General' },
+    { name: 'Kumari Mala', subject: 'Basic Grade General (Nagar Shikshak)' },
+	{ name: 'Chitranjan Tiwari', subject: 'Physical Education & Health Instratuctor' }
   ],
   management: [
-    { role: 'Headmaster', name: 'Mr. Rajesh Kumar' },
-    { role: 'PTA Head', name: 'Mrs. Sita Devi' }
+    { role: 'Headmaster', name: 'Mr. Prabhakar Dubey' }
   ]
 };
 // === end editable block ===
@@ -30,12 +45,12 @@ async function loadCounts(){
     const r = await fetch('/counts.json');
     if(!r.ok) throw new Error('counts.json missing');
     const c = await r.json();
-    animateCount('students-count', c.students || 523, 1200);
-    animateCount('teachers-count', c.teachers || 23, 1200);
+    animateCount('students-count', c.students || 750, 1200);
+    animateCount('teachers-count', c.teachers || 19, 1200);
   }catch(e){
     // fallback
-    animateCount('students-count', 523, 1200);
-    animateCount('teachers-count', 23, 1200);
+    animateCount('students-count', 750, 1200);
+    animateCount('teachers-count', 19, 1200);
   }
 }
 
@@ -84,7 +99,7 @@ function populateStaticLists(){
 function handleGetDirections(){
   const city = document.getElementById('visitor-city').value.trim();
   const noteEl = document.getElementById('directions-note');
-  const schoolCoords = { lat: 25.7000, lon: 84.2500 }; // approx coords for Ahirauli / Buxar
+  const schoolCoords = { lat: 25.5920, lon: 84.0048 }; // approx coords for Ahirauli / Buxar
   if(!city){
     noteEl.innerText = 'Please enter your city to open directions.';
     return;

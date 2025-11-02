@@ -23,10 +23,10 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center gap-4">
-          <img src="/static/images/logo.png" alt="logo" class="h-10 w-10 rounded-full object-cover" />
+          <img src="msa.png" alt="logo" class="h-10 w-10 rounded-full object-cover" />
           <div>
             <div class="font-semibold">M.S. Ahirauli</div>
-            <div class="text-xs text-gray-500">Ahirauli, Buxar, Bihar, India 802101</div>
+            <div class="text-xs text-gray-500">Ahirauli, Buxar, Bihar, India 802116</div>
           </div>
         </div>
 
@@ -46,17 +46,17 @@
       </div>
     </div>
   </nav>
-
+  
   <main class="pt-20">
     <!-- HERO (YouTube embed used for free hosting / bandwidth savings) -->
     <section class="relative h-screen overflow-hidden">
       <div class="absolute inset-0 w-full h-full">
         <!-- Replace VIDEO_ID with your YouTube video ID (unlisted recommended). -->
-        <iframe
-          class="w-full h-full object-cover"
-          src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&controls=0&loop=1&playlist=VIDEO_ID"
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="hero-poster.jpg">
+  <source src="IMG_0915.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
       </div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-6 py-40 text-white">
@@ -118,10 +118,14 @@
       <div class="mt-4 grid md:grid-cols-2 gap-6">
         <div>
           <!-- OpenStreetMap embed (no API key). Adjust lat/lon if needed. -->
-          <iframe width="100%" height="400" frameborder="0" style="border:0"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=84.0%2C25.5%2C84.5%2C25.9&layer=mapnik&marker=25.7%2C84.25"></iframe>
-          <br />
-          <small><a href="https://www.openstreetmap.org/?mlat=25.7&mlon=84.25#map=15/25.7000/84.2500">View Larger Map</a></small>
+          <!-- OpenStreetMap centered on Ahirauli (Buxar) -->
+<iframe
+  width="100%" height="400" frameborder="0" style="border:0"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=83.9948359%2C25.5819984%2C84.0148359%2C25.6019984&layer=mapnik&marker=25.5919984%2C84.0048359">
+</iframe>
+<br/>
+<small><a href="https://www.openstreetmap.org/?mlat=25.5919984&mlon=84.0048359#map=15/25.5920/84.0048">View Larger Map</a></small>
+
         </div>
 
         <div>
@@ -152,9 +156,9 @@
 
         <div class="p-6 rounded-lg bg-white shadow">
           <h3 class="font-semibold">School Info</h3>
-          <p class="text-sm mt-2">Ahirauli, Buxar, Bihar, India 802101</p>
-          <p class="text-sm mt-2">Phone: +91-XXXXXXXXXX</p>
-          <p class="text-sm mt-2">Email: info@ms-ahirauli.edu.in</p>
+          <p class="text-sm mt-2">Ahirauli, Buxar, Bihar, India 802116</p>
+          <p class="text-sm mt-2">Phone: +91-9939909330</p>
+          <p class="text-sm mt-2">Email: prabhakar.ppta.pd@gmail.com</p>
         </div>
       </div>
     </section>
